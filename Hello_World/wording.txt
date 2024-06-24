@@ -1,0 +1,16 @@
+-------- Exercise 1: Hello World! --------
+
+Objective:
+	Create a simple "Hello, World!" program in C without using the standard printf() function (or any derivatives like sprintf, etc). 
+	Also print the message "Hello, Error!" on the error stream.
+
+Key concepts:
+	- System calls
+	- UNIX streams
+
+Architecture:
+	hello_word.c file with a single main function, no header file necessary
+
+Compilation:
+	GCC with flags: -std=c99 -pedantic -Werror -Wall -Wextra -Wvla
+

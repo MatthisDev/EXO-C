@@ -1,0 +1,24 @@
+What is Clang-Format ?
+- It's a Linux tool used for reformatting Kernel Development Project, with command lines you can :
+- It's spot style, typos mistake in your code/files of code and reformat in Kernel Development style.
+- Then we can implement it at the root of our project with config file .clang-format. 
+- Clang-Format follows the Kernel style rules (https://www.kernel.org/doc/html/next/process/coding-style.html#codingstyle)
+- DOCS (https://clang.llvm.org/docs/ClangFormat.html) or (clang-format --help in terminal)
+
+What I understand about Unix STREAM ?
+
+Stream UNIX (is : IPC = UNIX interprocess communication) :
+- There are 3 different streams :
+We think of them as streams but in reality they are just files executed at the right time from stdio lib.
+	- ID : 0 = STDIN (standard input), this corresponds to the stream links between keyboard input and UNIX process system. Example : When we want to type command in a shell, each key is displayed in our screen. Then we can imagine the Key (of our keyboard) travels form Hardware keyboard to Unix process system (what we are going to do with this information/which code is executed) via STDIN
+	- ID : 1 = STDOUT (standard output), this corresponds to the streams links between Unix process system and Unix Display. With the same example : When we process the input information. This travels from Unix process system to the Display via STDOUT.
+	- ID : 2 = STDERR (standard error (diagnostic) output), this is the same as the STDOUT but in an other stream. In UNIX system we prefer to process Error in a different stream (i think it's for the simplicity's sake because we process them next)
+
+Why printf is more useful that Write ?
+
+1)If write has a successfully returned, this does not mean that data has been committed to disk. 
+2)The buffer size needs to be smaller than MAX_INT whereas printf does not specify a necessary size. 
+3)Printf makes the string conversion itself whereas write does not, we need to specify the buffer and it size, which is more cumbersome to implement. In Fact to display a message with printf is faster than with write.
+
+Then Write is less safe than printf.
+

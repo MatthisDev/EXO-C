@@ -1,0 +1,5 @@
+what does the 3 mean in printf(3)? Why is it important to specify this number? Did I need to specify it here?
+	3 is conventions from the Unix Manual. There are 9 sections, the third section corresponds to Library calls. And printf comes from the Lib stdio. It's important to specify this number because sometimes there is more than 1 function in the different sections then we could have the wrong one (Example : write). Here you don't need to specify it because there is just one printf function. However it's always prefered to specify the section by protection.
+
+        what does gracefully mean? Give examples of other "graceful" cases if you can think of any.
+Gracefully mean that we need to handle the Error cases cleanly and simply with the tools provided by the system. (Like use try catch)

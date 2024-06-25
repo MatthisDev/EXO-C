@@ -1,0 +1,23 @@
+ ------- Exercise 2: Acte de présence, rien de plus -------
+
+Objective :
+	Write a C program that checks if a specified file exists and prints an appropriate message to the screen. 
+	Handle the case where the file does not exist gracefully by printing an error message to the error stream. 
+	You may use printf(3) to print your result messages. The file to "inspect" MUST be given as argument to the script via the console (cf. examples)
+
+Bonus questions:
+	what does the 3 mean in printf(3)? Why is it important to specify this number? Did I need to specify it here?
+	what does gracefully mean? Give examples of other "graceful" cases if you can think of any.
+
+Key Concepts & Must-use ! :
+	C program arguments passing (hint: argc & argv à investiguer)
+	System calls (open(2) & close(2) à investiguer)
+	File descriptors (flag O_RDONLY par exemple)
+	Error handling with errno (rôle à investiguer mais sinon un print sur le stream approprié à la mano fonctionne)
+
+Architecture :
+	file_exists.c file with a single main function, no header file necessary
+
+Compilation :
+	GCC with flags: -std=c99 -pedantic -Werror -Wall -Wextra -Wvla
+

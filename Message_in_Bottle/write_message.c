@@ -13,8 +13,8 @@
  * 	no args = -r
  */
 // VALID ARGS
-char *REPLACE = "-r";
-char *APPEND  = "-a";
+const char *REPLACE = "-r";
+const char *APPEND  = "-a";
 
 int main(int argc, char* argv[]){
 	

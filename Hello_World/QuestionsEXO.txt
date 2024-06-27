@@ -14,7 +14,7 @@ We think of them as streams but in reality they are just files executed at the r
 	- ID : 1 = STDOUT (standard output), this corresponds to the streams links between Unix process system and Unix Display. With the same example : When we process the input information. This travels from Unix process system to the Display via STDOUT.
 	- ID : 2 = STDERR (standard error (diagnostic) output), this is the same as the STDOUT but in an other stream. In UNIX system we prefer to process Error in a different stream (i think it's for the simplicity's sake because we process them next)
 
-Why printf is more useful that Write ?
+Why printf is more useful than Write ?
 
 1)If write has a successfully returned, this does not mean that data has been committed to disk. 
 2)The buffer size needs to be smaller than MAX_INT whereas printf does not specify a necessary size. 

@@ -43,7 +43,7 @@ int get_content(const int fd, char* buff, size_t size){
 int open_file(const char* filename){
 	const int fd = open(filename, O_RDONLY);
 	if(fd == -1){
-		perror("error : can not open the file");
+		fprintf(stderr, "error : can not open the file");
 		exit(EXIT_FAILURE);
 	}
 	return fd;
@@ -82,13 +82,11 @@ void handle_display(const int fd, char* buff, size_t size_block, size_t size_buf
 		// fill the buffer with the next block
 		res = get_content(fd, &buff[begining], size_block);
 		
-			
 		/*
 			we adjust the size of the content to print 
 			(the number of character in the file may not be dividible by 
 			the block_size) 	
 		*/
-
 		if((size_t)res < size_block)
 			size_block = res;
 		else
@@ -113,7 +111,7 @@ int convert_to_int(char* str_number){
 
 		// verify if it is number and handle error case
 		if(number_equiv < 0 || number_equiv > 9){
-			perror("error : blocksize must be an integer");
+			fprintf(stderr, "error : blocksize must be an integer");
 			exit(EXIT_FAILURE);
 		}
 		

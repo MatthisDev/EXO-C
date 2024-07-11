@@ -1,0 +1,24 @@
+-------- Exercise 4: Roule buffer, roule --------
+
+Objective :
+	Write a C program that reads a file in blocks and prints each block 
+	followed by a newline character on stdout. The program should take a filename 
+	and the block size as command-line arguments.
+
+	Don't use malloc for you temporary buffer (the buffer you will use to store 
+	the content of the read syscall to write on stdout). Have a static fixed one 
+		of size big enough (1024 is ok).
+
+Key Concepts :
+	- System calls (open(), read(), write(), close()) 
+	- File descriptors
+	- Error handling with errno
+	- Command-line arguments
+	- Buffer management
+
+Architecture :
+	block_reader.c file with a single main function, no header file necessary
+
+Compilation :
+	GCC with flags: -std=c99 -pedantic -Werror -Wall -Wextra -Wvla
+

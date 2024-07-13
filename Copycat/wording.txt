@@ -1,0 +1,22 @@
+ ------- Exercise 5: Copycat -------
+
+Objective :
+	Write a C program that copies the content of one file to another. 
+	The program should take two filenames as command-line arguments: 
+	the source file (to read from) and the destination file (to write to).
+	If the destination file already exists, the program should either overwrite it 
+	or append to it based on a provided flag. Handle all errors gracefully and
+	ensure proper file operations.
+
+Key Concepts :
+	- System calls (open(), read(), write(), close())
+	- File descriptors
+	- Error handling with errno
+	- Command-line arguments
+	- Buffer management
+
+Architecture :
+	- copy_file.c file with a single main function, no header file necessary
+
+Compilation :
+GCC with flags: -std=c99 -pedantic -Werror -Wall -Wextra -Wvla

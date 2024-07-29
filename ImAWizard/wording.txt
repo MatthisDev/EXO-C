@@ -1,0 +1,34 @@
+ ------- Exercise 6: You're a wizard, Matthis -------
+
+Objective :
+	Write a C program to manage student records for Hogwarts School of Witchcraft
+	and Wizardry. Don't use memory allocation, make it all static 
+	(leave malloc & pointers alone).
+
+The program should :
+	- Define a struct to represent a student record.
+	- Accept commands to add, list, and delete student records.
+	- Store student records in an array of structs.
+	- Handle errors gracefully.
+
+Key Concepts :
+	- Structs in C
+	- Arrays of structs
+	- Basic file I/O (optional for saving/loading records)
+	- Command-line arguments
+	- Input handling
+
+Architecture :
+	- hogwarts_records.c file, subfunctions are recommended!
+
+Compilation :
+	- GCC with flags: -std=c99 -pedantic -Werror -Wall -Wextra -Wvla
+
+Supported Command List :
+	- add <name> <house> <year> <gpa>: Adds a new student profile to the school
+	records with given parameters
+	- list: Prints all students in the school records (format can be seen below)
+	- delete <index>: Deletes a specific entry by index
+	- exit: Ends program.
+
+Handle edge cases! What about missing parameters or invalid values? 

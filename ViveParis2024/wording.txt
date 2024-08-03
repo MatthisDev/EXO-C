@@ -1,0 +1,25 @@
+ ------ Exercise 7: Vive Paris 2024 ------
+
+Objective:
+- Write a C program to manage a dynamic list of participants for the Olympic Games. The program should:
+- Define a struct to represent a participant.
+- Use dynamic memory allocation to store a list of participants.
+- Demonstrate adding participants to the list and listing all participants.
+
+Notes:
+Make a function to add an athlete to a list of recorded athletes and a function to list them all  (see expected output below).
+- An athlete is represented by a name & a sport.
+- All structs must be allocated dynamically. The array containing must also but (re)allocated dynamically as an entry is added.
+- Don't forget about the memory you allocate 👀
+
+Key Concepts:
+- Structs in C
+- Dynamic memory allocation with malloc, realloc & free
+- Handling arrays of structs
+
+Architecture:
+- olympic_participants.c file with a single main function, no header file necessary
+
+Compilation:
+- GCC with flags: -std=c99 -pedantic -Werror -Wall -Wextra -Wvla
+

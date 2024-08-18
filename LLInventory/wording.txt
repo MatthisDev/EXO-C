@@ -1,0 +1,116 @@
+-------- Exercise 8: Link's Linked Inventory --------
+
+Objective:
+In this exercise, you'll help Link from The Legend of Zelda manage a dynamic list of items he collects during his adventure. You'll implement a singly linked list in C to store and manage these items. This will involve adding new items, inserting items at specific positions, removing items by index or name, and displaying all items in Link's inventory.
+
+Key Concepts:
+- Pointers and pointer manipulation
+- Dynamic memory allocation (malloc, free)
+- Linked data structures
+- Function prototypes and implementation
+
+Scenario:
+Link is on a quest to save Hyrule, and along the way, he collects various items. Each item is represented by a unique identifier (an integer) and a name. You'll create a linked list to manage Link's inventory, adding and removing items as he progresses through his adventure.
+
+Requirements:
+You are required to implement the following functions: 
+- Adding Items:
+void add_item(struct item_node** head, int id, const char* name);
+This function adds a new item to the end of Link's inventory.
+
+- Inserting Items:
+void insert_item(struct item_node** head, int index, int id, const char* name);
+This function inserts a new item at the specified index in Link's inventory.
+
+- Removing Items by Index:
+void remove_item_by_index(struct item_node** head, int index);
+This function removes the item at the specified index from Link's inventory.
+
+- Removing Items by Name:
+void remove_item_by_name(struct item_node head, const char* name);
+This function removes the first occurrence of an item with the specified name from Link's inventory.
+
+Displaying All Items:
+void display_inventory(struct item_node* head);
+This function prints all the items in Link's inventory in the following format: ID: 1, Name: Master Sword -> ID: 2, Name: Hylian Shield -> NULL.
+
+Freeing the Inventory:
+void free_inventory(struct item_node* head);
+This function frees all the nodes in Link's inventory to prevent memory leaks.
+
+Architecture:
+link_inventory.c should contain all your function implementations.
+Your inventory list should use a struct to define a node.
+
+Example Structure Definition:
+You will need to define a struct to represent each node in the inventory list. Below is an example structure:
+
+struct item_node {
+    int id;
+    char* name;
+    struct item_node* next;
+};
+
+Example Function Prototypes:
+void add_item(struct item_node** head, int id, const char* name);
+void insert_item(struct item_node** head, int index, int id, const char* name);
+void remove_item_by_index(struct item_node** head, int index);
+void remove_item_by_name(struct item_node** head, const char* name);
+void display_inventory(struct item_node* head);
+void free_inventory(struct item_node* head);
+Expected Program Behavior
+You should be able to create a linked list of items in Link's inventory and perform various operations on it. For example:
+
+int main() {
+    struct item_node* inventory = NULL;
+
+    add_item(&inventory, 1, "Master Sword");
+    add_item(&inventory, 2, "Hylian Shield");
+    add_item(&inventory, 3, "Boomerang");
+
+    insert_item(&inventory, 1, 4, "Hookshot"); // Insert "Hookshot" at index 1
+    insert_item(&inventory, 3, 5, "Bombs"); // Insert "Bombs" at index 3
+
+    display_inventory(inventory); // Expected output: ID: 1, Name: Master Sword -> ID: 4, Name: Hookshot -> ID: 2, Name: Hylian Shield -> ID: 5, Name: Bombs -> ID: 3, Name: Boomerang -> NULL
+
+    remove_item_by_index(&inventory, 2); // Remove the item at index 2 (Hylian Shield)
+    remove_item_by_name(&inventory, "Bombs"); // Remove the first occurrence of "Bombs"
+
+    display_inventory(inventory); // Expected output: ID: 1, Name: Master Sword -> ID: 4, Name: Hookshot -> ID: 3, Name: Boomerang -> NULL
+
+    free_inventory(inventory); // Clean up memory
+    return 0;
+}
+
+Expected Program Behavior:
+You should be able to create a linked list of items in Link's inventory and perform various operations on it. For example:
+
+int main() {
+    struct item_node* inventory = NULL;
+
+    add_item(&inventory, 1, "Master Sword");
+    add_item(&inventory, 2, "Hylian Shield");
+    add_item(&inventory, 3, "Boomerang");
+
+    insert_item(&inventory, 1, 4, "Hookshot"); // Insert "Hookshot" at index 1
+    insert_item(&inventory, 3, 5, "Bombs"); // Insert "Bombs" at index 3
+
+    display_inventory(inventory); // Expected output: ID: 1, Name: Master Sword -> ID: 4, Name: Hookshot -> ID: 2, Name: Hylian Shield -> ID: 5, Name: Bombs -> ID: 3, Name: Boomerang -> NULL
+
+    remove_item_by_index(&inventory, 2); // Remove the item at index 2 (Hylian Shield)
+    remove_item_by_name(&inventory, "Bombs"); // Remove the first occurrence of "Bombs"
+
+    display_inventory(inventory); // Expected output: ID: 1, Name: Master Sword -> ID: 4, Name: Hookshot -> ID: 3, Name: Boomerang -> NULL
+
+    free_inventory(inventory); // Clean up memory
+    return 0;
+}
+
+Compilation Instructions:
+- Compile your program using the following GCC command:
+gcc -Wall -Wextra -Werror -std=c99 -pedantic -o link_inventory link_inventory.c
+
+Additional Challenge:
+- For an extra challenge, try implementing a reverse function:
+void reverse_inventory(struct item_node head);
+This function reverses the order of items in Link's inventory.
